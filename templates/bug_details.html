@@ -73,7 +73,12 @@
             {% for hit in hits %}
                 <tr>
                     <td>{{ hit.date }}</td>
-                    <td>{{ hit.http_referer }}</td>
+                    {% if hit.http_referer %}
+                        <td>{{ hit.http_referer }}</td>
+                    {% else %}
+                        <td>Unknown</td>
+                    {% endif %}
+
                     <td>{{ hit.real_ip }}</td>
                     <td>{{ hit.remote_addr }}{% if hit.remote_port %}:{{ hit.remote_port }}{% endif %}</td>
                     <td style="text-align: center;"><a href="/more/{{ hit.id }}"><button class="btn btn-primary">&nbsp &nbsp</button></a></td>
