@@ -102,8 +102,14 @@ def serve_bug(request, webbug_id):
             resp.set_cookie('i', str(int(request.COOKIES['i']) + 1))
         else:
             resp.set_cookie('i', '1')
+
         if 'uuid' not in request.COOKIES:
-            resp.set_cookie('uuid', str(uuid.uuid1()))
+            _uuid = str(uuid.uuid1())
+            resp.set_cookie('uuid', _uuid)
+            new_hit.uuid = _uuid
+        else:
+            new_hit.uuid = request.COOKIES['uuid']
+        new_hit.save()
 
         return resp
     else:
