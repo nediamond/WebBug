@@ -88,6 +88,10 @@ def serve_bug(request, webbug_id):
             new_hit.http_referer = request.META['HTTP_REFERER']
         if 'REMOTE_ADDR' in request.META:
             new_hit.remote_addr = request.META['REMOTE_ADDR']
+        if 'REMOTE_PORT' in request.META:
+            new_hit.remote_port = request.META['REMOTE_PORT']
+        if 'HTTP_X_REAL_IP' in request.META:
+            new_hit.real_ip = request.META['HTTP_X_REAL_IP']
         new_hit.save()
 
         image_data = open(os.path.join(settings.BASE_DIR,"static/a.png"), "rb").read()
