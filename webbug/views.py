@@ -40,7 +40,7 @@ def hits(request, sniper_id):
     if not sniper or not sniper.owner == request.user:
         return HttpResponseForbidden()
     _hits = Hit.objects.filter(sniper=sniper).order_by('-date')
-    return render(request, 'sniper_details.html', {'sniper': sniper, 'hits': _hits})
+    return render(request, 'sniper_details.html', {'webbug': sniper, 'hits': _hits})
 
 @login_required
 def create_sniper(request):
@@ -93,11 +93,9 @@ def new_account(request):
     return render(request, 'new_user.html')
 
 def create_account(request):
-    # Need to validate emails before handing out accounts
-    # if request.method == 'POST':
-    #     username = request.POST['username']
-    #     password = request.POST['password']
-    #     email = request.POST['email']
-    #
-    #     User.objects.create_user(username=username,password=password,email=email).save()
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+
+        User.objects.create_user(username=username,password=password).save()
     return redirect('/')

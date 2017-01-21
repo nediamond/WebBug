@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>CL Sniper</title>
+    <title>WebBug</title>
 
     <!-- Bootstrap core CSS -->
     <link href="https://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -42,12 +42,12 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/">CL Sniper</a>
+          <a class="navbar-brand" href="/">WebBug</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li><a href="/">My Snipers</a></li>
-            <li><a href="/new">New Sniper</a></li>
+            <li><a href="/">My Bugs</a></li>
+            <li><a href="/new">New Bug</a></li>
             <li class="active"><a href="/profile">My Profile</a></li>
             <li><a href="/logout">Log Out</a></li>
           </ul>
@@ -59,7 +59,6 @@
         <br><h2>My Profile</h2><br>
         <ul>
             <li><b>Username:</b> {{ request.user.username }}</li>
-            <li><b>Email:</b> {{ request.user.email }}</li>
         </ul>
     </div><!-- /.container -->
 
