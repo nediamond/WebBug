@@ -28,6 +28,7 @@ class Hit(models.Model):
     remote_addr = models.TextField(blank=True)
     remote_port = models.TextField(blank=True)
     real_ip = models.TextField(blank=True)
+    uuid = models.TextField(blank=True)
 
     def __unicode__(self):
         return unicode(self.date)
