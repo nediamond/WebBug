@@ -7,7 +7,8 @@ from models import Bug, Hit
 from django.contrib.auth.models import User
 from pprint import pprint as pp
 from pprint import pformat
-import json, uuid
+import json, uuid, os
+import settings
 
 @csrf_protect
 def home(request):
@@ -89,7 +90,7 @@ def serve_bug(request, webbug_id):
             new_hit.remote_addr = request.META['REMOTE_ADDR']
         new_hit.save()
 
-        image_data = open("../static/a.png", "rb").read()
+        image_data = open(os.path.join(settings.BASE_DIR,"static/a.png"), "rb").read()
         resp = HttpResponse(image_data, content_type="image/png")
         resp['Cache-Control'] = 'no-cache, no-store'
 
