@@ -26,6 +26,8 @@ class Hit(models.Model):
     cookies_json = models.TextField(blank=False)
     http_referer = models.TextField(blank=True)
     remote_addr = models.TextField()
+    remote_port = models.TextField()
+    real_ip = models.TextField()
     def __unicode__(self):
         return unicode(self.date)
 
