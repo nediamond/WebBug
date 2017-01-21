@@ -89,7 +89,7 @@ def serve_bug(request, webbug_id):
             new_hit.remote_addr = request.META['REMOTE_ADDR']
         new_hit.save()
 
-        image_data = open("static/a.png", "rb").read()
+        image_data = open("../static/a.png", "rb").read()
         resp = HttpResponse(image_data, content_type="image/png")
         resp['Cache-Control'] = 'no-cache, no-store'
 
