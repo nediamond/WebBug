@@ -48,7 +48,7 @@
           <ul class="nav navbar-nav">
             <li><a href="/">My Bugs</a></li>
 {#            <li><a href="/new">New Bug</a></li>#}
-            <li class="active"><a href="/profile">My Profile</a></li>
+            <li><a href="/profile">My Profile</a></li>
             <li><a href="/logout">Log Out</a></li>
           </ul>
         </div><!--/.nav-collapse -->
@@ -56,10 +56,29 @@
     </nav>
 
     <div class="container">
-        <br><h2>My Profile</h2><br>
-        <ul>
-            <li><b>Username:</b> {{ request.user.username }}</li>
-        </ul>
+        <br><h2>WebBug Details</h2><br>
+            <ul>
+                <li><b>Bug ID:&nbsp;</b>{{ webbug.id }}</li>
+                <li><b>Copy/Pastable HTML Tag:&nbsp;</b>&lt;img src="{{ request.META.HTTP_HOST }}/img/{{ webbug.id }}"&gt;</li>
+            </ul>
+        <br><h2>Hits</h2><br>
+        <table class="table table-striped">
+            <tr>
+                <th>DateTime</th>
+                <th>Referer</th>
+                <th>IP Addr</th>
+                <th style="text-align: center;">More Info</th>
+            </tr>
+            {% for hit in hits %}
+                <tr>
+                    <td>{{ hit.date }}</td>
+                    <td>{{ hit.html_referer }}</td>
+                    <td>{{ hit.remote_addr }}</td>
+                    <td style="text-align: center;"><a href="/more/{{ hit.id }}"><button class="btn btn-primary">&nbsp &nbsp</button></a></td>
+                </tr>
+            {% endfor %}
+        </table>
+
     </div><!-- /.container -->
 
 
