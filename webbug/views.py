@@ -125,3 +125,7 @@ def hit_details(request, hit_id):
     headers = json.loads(hit.http_headers_json)
     return render(request, 'hit_details.html', {'hit':hit,'cookies':cookies, 'headers':headers})
 
+
+@login_required
+def about(request):
+    return render(request, 'about.html')

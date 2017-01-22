@@ -32,4 +32,5 @@ urlpatterns = [
     url(r'^create_account$', views.create_account),
     url(r'^img/(?P<webbug_id>[0-9]+)/$', views.serve_bug),
     url(r'^more/(?P<hit_id>[0-9]+)/$', views.hit_details),
+    url(r'^about/$', views.about)
 ]
