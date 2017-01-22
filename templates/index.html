@@ -70,7 +70,7 @@
             {% for bug in bugs %}
                 <tr>
                     <td>{{ bug.id }}</td>
-                    <td style="text-align: left;">&lt;img src="http://{{ request.META.HTTP_HOST }}/img/{{ bug.id }}"&gt;</td>
+                    <td style="text-align: left;">&lt;img src="https://{{ request.META.HTTP_HOST }}/img/{{ bug.id }}"&gt;</td>
                     <td>{{ bug.num_unique_users }}</td>
                     <td>{{ bug.num_hits }}</td>
                     <td ><a href="hits/{{ bug.id }}"><button class="btn btn-primary">&nbsp &nbsp</button></a></td>
