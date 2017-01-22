@@ -62,7 +62,7 @@
         <table class="table" style="text-align: center;">
             <tr>
                 <th style="text-align: center;">Bug ID</th>
-                <th>Bug URL</th>
+                <th>Bug HTML</th>
                 <th style="text-align: center;">Unique User Count</th>
                 <th style="text-align: center;">Hit Count</th>
                 <th style="text-align: center;">Details</th>
@@ -70,7 +70,7 @@
             {% for bug in bugs %}
                 <tr>
                     <td>{{ bug.id }}</td>
-                    <td style="text-align: left;">{{ request.META.HTTP_HOST }}/img/{{ bug.id }}/</td>
+                    <td style="text-align: left;">&lt;img src="{{ request.META.HTTP_HOST }}/img/{{ webbug.id }}"&gt;</td>
                     <td>{{ bug.num_unique_users }}</td>
                     <td>{{ bug.num_hits }}</td>
                     <td ><a href="hits/{{ bug.id }}"><button class="btn btn-primary">&nbsp &nbsp</button></a></td>
