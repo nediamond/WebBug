@@ -15,6 +15,10 @@ class Bug(models.Model):
         return Hit.objects.filter(bug=self)
     hits = property(_get_hits)
 
+    def _get_num_unique_users(self):
+        return self.hits.values("uuid").distinct().count()
+    num_unique_users = property(_get_num_unique_users)
+
     def __unicode__(self):
         return unicode("Bug "+self.id)
 
