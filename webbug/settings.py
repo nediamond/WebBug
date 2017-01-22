@@ -117,6 +117,7 @@ DATABASES = {
 }
 
 SECURE_SSL_REDIRECT = True
+TIME_ZONE = 'America/Tijuana'
 
 # EMAIL_USE_TLS = True
 # EMAIL_HOST = 'smtp.gmail.com'
