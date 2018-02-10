@@ -3,7 +3,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.views.decorators.csrf import csrf_protect
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseForbidden
-from models import Bug, Hit
+from .models import Bug, Hit
 from django.contrib.auth.models import User
 from pprint import pprint as pp
 from pprint import pformat
