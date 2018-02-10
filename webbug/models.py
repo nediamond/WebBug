@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 
 class Bug(models.Model):
     # Uses django id for url gen
-    owner = models.ForeignKey(User, unique=False)
+    owner = models.ForeignKey(User, unique=False, on_delete=models.CASCADE,)
 
     def _get_num_hits(self):
         return Hit.objects.filter(bug=self).count()
@@ -24,7 +24,7 @@ class Bug(models.Model):
 
 
 class Hit(models.Model):
-    bug = models.ForeignKey(Bug, unique=False)
+    bug = models.ForeignKey(Bug, unique=False, on_delete=models.CASCADE,)
     date = models.DateTimeField(auto_now_add=True)
     http_headers_json = models.TextField(blank=False)
     cookies_json = models.TextField(blank=False)
