@@ -24,8 +24,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'd(tsqn#n0r67&5d#lx&$&cmx0ylj4&!3hmi-t35t0ug-_3v^z3'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-ALLOWED_HOSTS = ['nnmnnn.herokuapp.com']
+DEBUG = True
+ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -119,7 +119,7 @@ DATABASES = {
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
 
-SECURE_SSL_REDIRECT = True
+#SECURE_SSL_REDIRECT = True
 TIME_ZONE = 'America/Tijuana'
 
 # EMAIL_USE_TLS = True

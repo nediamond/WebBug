@@ -20,7 +20,7 @@ class Bug(models.Model):
     num_unique_users = property(_get_num_unique_users)
 
     def __unicode__(self):
-        return unicode("Bug "+self.id)
+        return unicode("Bug "+str(self.id))
 
 
 class Hit(models.Model):

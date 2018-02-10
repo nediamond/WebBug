@@ -76,7 +76,6 @@ def create_account(request):
 
 def serve_bug(request, webbug_id):
     bug = Bug.objects.filter(id=webbug_id).first()
-    print(bug)
     if bug:
         dumpable_meta = {x: y for x, y in request.META.iteritems() if isinstance(y,str)}
         new_hit = Hit(bug=bug,
