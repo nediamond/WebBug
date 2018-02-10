@@ -92,7 +92,9 @@ def serve_bug(request, webbug_id):
             new_hit.real_ip = request.META['HTTP_X_REAL_IP']
         new_hit.save()
 
-        image_data = open(os.path.join(settings.BASE_DIR,"static/a.png"), "rb").read()
+        #image_data = open(os.path.join(settings.BASE_DIR,"static/a.png"), "rb").read()
+        #white pixel
+        image_data = '\x89PNG\r\n\x1a\n\x00\x00\x00\rIHDR\x00\x00\x00\x01\x00\x00\x00\x01\x08\x06\x00\x00\x00\x1f\x15\xc4\x89\x00\x00\x00\x01sRGB\x00\xae\xce\x1c\xe9\x00\x00\x00\x04gAMA\x00\x00\xb1\x8f\x0b\xfca\x05\x00\x00\x00\tpHYs\x00\x00$\xe8\x00\x00$\xe8\x01\x82c\x05\x1c\x00\x00\x00\rIDAT\x18Wc\xf8\xff\xff\xff\x7f\x00\t\xfb\x03\xfd\x05CE\xca\x00\x00\x00\x00IEND\xaeB`\x82'
         resp = HttpResponse(image_data, content_type="image/png")
         resp['Cache-Control'] = 'no-cache, no-store'
 
