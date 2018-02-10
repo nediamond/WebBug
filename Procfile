@@ -1,2 +1,2 @@
 release: python manage.py migrate
-web: gunicorn webbug:app --log-file - 
+web: gunicorn webbug.wsgi --log-file - 
