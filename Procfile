@@ -1,1 +1,2 @@
-web: gunicorn breitlon_flask:app --log-file - 
+release: python manage.py migrate
+web: gunicorn nnmnnn:app --log-file - 
