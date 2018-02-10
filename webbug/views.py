@@ -8,7 +8,7 @@ from django.contrib.auth.models import User
 from pprint import pprint as pp
 from pprint import pformat
 import json, uuid, os
-import settings
+from . import settings
 
 @csrf_protect
 def home(request):
